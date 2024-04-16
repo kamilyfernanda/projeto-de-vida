@@ -1,17 +1,17 @@
-const botoes = document.querySelectorAll(".botao")
-const textos = document.querySelectorAll(".aba-conteudo")
+const botoes = document.querySelectorAll(".botao");
+const textos = document.querySelectorAll(".aba-conteudo");
 
-for (let i= 0;i <botoes.length;i++){
-    botoes[i].onclik = function(){
+for (let i = 0; i < botoes.length; i++) {
+    botoes[i].onclick = function () {
 
-        for(let j=0;j<botoes.length;j++){
-            botoes[j].classlist.remover("ativo");
-            textos[j].classlist.remover("ativo");
+        for (let j = 0; j < botoes.length; j++) {
+            botoes[j].classList.remove("ativo");
+            textos[j].classList.remove("ativo");
         }
 
-        botoes[i].classlist.add("ativo");
+        botoes[i].classList.add("ativo");
+        textos[i].classList.add("ativo");
     }
-    console.long();
 }
 
 const contadores = document.querySelectorAll(".contador");
@@ -42,14 +42,14 @@ function calculaTempo(tempoObjetivo) {
 }
 
 function atualizaCronometro(){
-    document.getElementById("dias0").textContent = calculaTempo(tempo[1])[0];
-    document.getElementById("horas0").textContent = calculaTempo(tempos[1])[1];
-    document.getElementById("min0").textContent = calculaTempo(tempos[1])[2];
-    document.getElementById("seg0").textContent = calculaTempo(tempos[1])[3];
-
+    document.getElementById("dias0").textContent = calculaTempo(tempos[0])[0];
+    document.getElementById("horas0").textContent = calculaTempo(tempos[0])[1];
+    document.getElementById("min0").textContent = calculaTempo(tempos[0])[2];
 
     for (let i=0; i<contadores.length;i++){
-        //contadores[i].textContent = calculaTempo(tempos[i]);   
+        document.getElementById("seg"+i).textContent = calculaTempo(tempos[i])[3]
+        console.log("seg"+1);
+          
     }
 }
 
